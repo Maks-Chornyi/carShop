@@ -3,6 +3,7 @@ package education.cursor.carshop.domain.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "CARS")
@@ -14,6 +15,7 @@ import javax.persistence.*;
 public class Car {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
@@ -26,11 +28,14 @@ public class Car {
     @Column(name = "TYPE")
     private String type;
 
+
     @Column(name = "MODEL")
     private String model;
 
+
     @Column(name = "MARK")
     private String mark;
+
 
     @Column(name = "COUNTRY_OF_REGISTRATION")
     private String countryOfRegistration;
