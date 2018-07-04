@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 @Service
@@ -20,7 +19,6 @@ public class CarService implements ICarService {
     @SneakyThrows
     @Override
     public void saveNewCar(CarDTO carDTO) {
-        Thread.sleep(5000);
         repository.save(Car.builder()
                 .countryOfRegistration(carDTO.getCountryOfRegistration())
                 .description(carDTO.getDescription())
@@ -41,7 +39,7 @@ public class CarService implements ICarService {
     public Car getCarById(Long carId) {
         return repository
                 .findById(carId)
-                .orElseThrow(() -> new RuntimeException("Some shit happened"));
+                .orElseThrow(() -> new RuntimeException(String.format("Car with id %d not found",carId)));
     }
 
 }

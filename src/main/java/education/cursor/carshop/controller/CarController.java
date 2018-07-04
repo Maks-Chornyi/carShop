@@ -2,7 +2,6 @@ package education.cursor.carshop.controller;
 
 import education.cursor.carshop.controller.dto.CarDTO;
 import education.cursor.carshop.controller.dto.Response;
-import education.cursor.carshop.domain.model.Car;
 import education.cursor.carshop.service.ICarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Validated
